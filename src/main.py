@@ -55,7 +55,7 @@ if __name__=="__main__":
   if not os.path.isdir(target_folder):
     print("mkdir -p {0}".format(target_folder))
 
-  for i, group in enumerate(groups):
-      print("mkdir {0}".format(path.join(target_folder, str(i))))
-      for image in group:
-          print("cp {0} {1}".format(image.filepath, path.join(target_folder, str(i)) + "/"))
+  for iGroup, group in enumerate(groups):
+      print("mkdir {0}".format(path.join(target_folder, str(iGroup))))
+      for iImage, image in enumerate(group):
+          print("cp {0} {1}".format(image.filepath, path.join(path.join(target_folder, str(iGroup)), str(iImage) + ".ARW")))
